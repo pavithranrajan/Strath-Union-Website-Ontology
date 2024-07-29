@@ -1,0 +1,871 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.pizza.com/ontologies/pizza.owl"
+     xml:base="http://www.pizza.com/ontologies/pizza.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Union="http://www.StudentUnion.com/ontologies/Union.owl#">
+    <owl:Ontology rdf:about="http://www.StudentUnion.com/ontologies/Union.owl">
+        <owl:versionIRI rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:comment>The ontology represents a part of the business of the Strathclyde Student Union Website.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Advises -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Advises">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Advisor"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Heldin -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Heldin">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Hosts"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Event"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Venue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Hosts -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Hosts">
+        <rdfs:subPropertyOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Heldin"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Venue"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#IsGenderof -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#IsGenderof">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#hasGender"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Gender"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#News_is -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#News_is">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Event"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#News"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Organises -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Organises">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Represents -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Represents">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Studies -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Studies">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Teaches">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Lecturer"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#hasEmail_ID -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#hasEmail_ID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Email_ID"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#hasGender -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#hasGender">
+        <rdfs:subPropertyOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#IsGenderof"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Gender"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#hasIdentification_No -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#hasIdentification_No">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Identification_No"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#hasName -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#isNameof"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#isNameof -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#isNameof">
+        <rdfs:subPropertyOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#hasName"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Name"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#isPartof -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#isPartof">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#isPresidentof -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#isPresidentof">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Organisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#wantsAdviceon -->
+
+    <owl:ObjectProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#wantsAdviceon">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+        <rdfs:range rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Advice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Course_is -->
+
+    <owl:DatatypeProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Course_is">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Email_ID_is -->
+
+    <owl:DatatypeProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Email_ID_is">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Email_ID"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Identification_No_is -->
+
+    <owl:DatatypeProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Identification_No_is">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Identification_No"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Name_is -->
+
+    <owl:DatatypeProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Name_is">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#News_section -->
+
+    <owl:DatatypeProperty rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#News_section">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#News"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Academic_Advice -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Academic_Advice">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Advice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Advice -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Advice"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Advisor -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Advisor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Advises"/>
+                        <owl:someValuesFrom rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Club -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Club">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Community -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Community">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Course -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Diploma_Course -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Diploma_Course">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Email_ID -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Email_ID"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Event -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Event"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Female -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Female">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Gender"/>
+        <owl:disjointWith rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Male"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Financial_Advice -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Financial_Advice">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Advice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Gender -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Gender"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Housing_Advice -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Housing_Advice">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Advice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Identification_No -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Identification_No"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Lecturer -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Lecturer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Teaches"/>
+                        <owl:someValuesFrom rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Male -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Male">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Gender"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Name -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Name"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#News -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#News"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Online_Course -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Online_Course">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Organisation -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Organisation"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Organiser -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Organiser">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Organises"/>
+                        <owl:someValuesFrom rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Event"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Person -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Postgraduate_Course -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Postgraduate_Course">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#President -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#President">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#isPresidentof"/>
+                        <owl:someValuesFrom rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Organisation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Representative -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Representative">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Represents"/>
+                        <owl:someValuesFrom rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Society -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Society">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Student -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Student">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Studies"/>
+                        <owl:someValuesFrom rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Undergraduate_Course -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Undergraduate_Course">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Venue -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Venue"/>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Health_&amp;_Well-being_Advice -->
+
+    <owl:Class rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Health_&amp;_Well-being_Advice">
+        <rdfs:subClassOf rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Advice"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Art_Club -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Art_Club">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Club"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#BBA_in_Economics -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#BBA_in_Economics">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Undergraduate_Course"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Bob_Iger -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Bob_Iger">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#President"/>
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+        <Union:Studies rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_Data_Science"/>
+        <Union:isPartof rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Sports_club"/>
+        <Union:isPresidentof rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Sports_club"/>
+        <Union:Email_ID_is>bob.iger@strath.ac.uk</Union:Email_ID_is>
+        <Union:Identification_No_is rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">543215</Union:Identification_No_is>
+        <Union:Name_is>Bob Iger</Union:Name_is>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</foaf:age>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Chris_Evans -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Chris_Evans">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Representative"/>
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+        <Union:Represents rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_AI"/>
+        <Union:Studies rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_AI"/>
+        <Union:Email_ID_is>chris.evans@strath.ac.uk</Union:Email_ID_is>
+        <Union:Identification_No_is rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">654326</Union:Identification_No_is>
+        <Union:Name_is>Chris Evans</Union:Name_is>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</foaf:age>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Film_Screening -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Film_Screening">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Event"/>
+        <Union:Heldin rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Rottenrow_Gardens"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Film_Society -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Film_Society">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Society"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#International_Students_Community -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#International_Students_Community">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Community"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#John_Oliver -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#John_Oliver">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Lecturer"/>
+        <Union:Teaches rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_AI"/>
+        <Union:Teaches rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_Data_Science"/>
+        <Union:Email_ID_is>john.oliver@strath.ac.uk</Union:Email_ID_is>
+        <Union:Identification_No_is rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4321</Union:Identification_No_is>
+        <Union:Name_is>John Oliver</Union:Name_is>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</foaf:age>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Kevin_Feige -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Kevin_Feige">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Advisor"/>
+        <Union:Advises rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Bob_Iger"/>
+        <Union:Advises rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Chris_Evans"/>
+        <Union:Advises rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Paul_Rudd"/>
+        <Union:Advises rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Tom_Holland"/>
+        <Union:Advises rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Varun_Kapoor"/>
+        <Union:Email_ID_is>kevin.feige@strath.ac.uk</Union:Email_ID_is>
+        <Union:Identification_No_is rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3210</Union:Identification_No_is>
+        <Union:Name_is>Kevin Feige</Union:Name_is>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</foaf:age>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_AI -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_AI">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Postgraduate_Course"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_Data_Science -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_Data_Science">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Postgraduate_Course"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Paul_Rudd -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Paul_Rudd">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#President"/>
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Representative"/>
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+        <Union:Represents rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#BBA_in_Economics"/>
+        <Union:Studies rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#BBA_in_Economics"/>
+        <Union:isPresidentof rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Art_Club"/>
+        <Union:Email_ID_is>paul.rudd@strath.ac.uk</Union:Email_ID_is>
+        <Union:Identification_No_is rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">765437</Union:Identification_No_is>
+        <Union:Name_is>Paul Rudd</Union:Name_is>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</foaf:age>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Rottenrow_Gardens -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Rottenrow_Gardens">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Venue"/>
+        <Union:Hosts rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Film_Screening"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Sam_Jackson -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Sam_Jackson">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Lecturer"/>
+        <Union:Teaches rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#BBA_in_Economics"/>
+        <Union:Email_ID_is>sam.jackson@strath.ac.uk</Union:Email_ID_is>
+        <Union:Identification_No_is rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5432</Union:Identification_No_is>
+        <Union:Name_is>Sam Jackson</Union:Name_is>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</foaf:age>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Sports_club -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Sports_club">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Club"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Tom_Holland -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Tom_Holland">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Organiser"/>
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Representative"/>
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+        <Union:Organises rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Film_Screening"/>
+        <Union:Represents rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_Data_Science"/>
+        <Union:Studies rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_Data_Science"/>
+        <Union:isPartof rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Film_Society"/>
+        <Union:Email_ID_is>tom.holland@strath.ac.uk</Union:Email_ID_is>
+        <Union:Identification_No_is rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">876548</Union:Identification_No_is>
+        <Union:Name_is>Tom Holland</Union:Name_is>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</foaf:age>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Union_Building -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Union_Building">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Venue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Varun_Kapoor -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Varun_Kapoor">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#President"/>
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+        <Union:Studies rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#MSc_in_AI"/>
+        <Union:isPresidentof rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Art_Club"/>
+        <Union:Email_ID_is>varun.kapoor@strath.ac.uk</Union:Email_ID_is>
+        <Union:Identification_No_is rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">987659</Union:Identification_No_is>
+        <Union:Name_is>Varun Kapoor</Union:Name_is>
+        <foaf:age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</foaf:age>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.StudentUnion.com/ontologies/Union.owl#Yoga_Club -->
+
+    <owl:NamedIndividual rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Yoga_Club">
+        <rdf:type rdf:resource="http://www.StudentUnion.com/ontologies/Union.owl#Club"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Academic_Advice"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Financial_Advice"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Housing_Advice"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Health_&amp;_Well-being_Advice"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Advice"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Advisor"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Course"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Email_ID"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Event"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Gender"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Identification_No"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Lecturer"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Name"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#News"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Organisation"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Person"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Student"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Venue"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Advisor"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Lecturer"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#President"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Advisor"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Lecturer"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Representative"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Club"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Community"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Society"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Diploma_Course"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Online_Course"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Postgraduate_Course"/>
+            <rdf:Description rdf:about="http://www.StudentUnion.com/ontologies/Union.owl#Undergraduate_Course"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
